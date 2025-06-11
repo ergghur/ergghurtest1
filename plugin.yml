@@ -1,0 +1,43 @@
+name: BackpackPlus
+version: '1.4.5'
+main: pl.ziomalu.backpackplus.BackpackPlus
+prefix: BackpackPlus
+api-version: '1.19'
+author: ziomalu
+description: Adds different kinds of backpacks to the server, you have a full configuration
+
+libraries:
+  - com.zaxxer:HikariCP:4.0.3
+  - org.xerial:sqlite-jdbc:3.46.1.0
+
+commands:
+  backpackplus:
+    aliases:
+      - backpack
+      - bp
+
+permissions:
+  backpackplus:
+    admin:
+      crafting:
+        default: op
+        description: Allows you to use the command /backpack crafting
+      resourcepack:
+        reload:
+          default: op
+          description: Allows you to use the command /backpack resourcepack reload
+      view:
+        backpacks:
+          default: op
+          description: Allows you to use the command /backpack players/backpacks
+      give:
+        backpacks:
+          default: op
+          description: Allows you to use the command /backpack give
+    command:
+      use:
+        default: not op
+      resourcepack:
+        default: not op
+        description: Allows you to use the command /backpack resourcepack
+
